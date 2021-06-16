@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Циклы</title>{% endblock %}
+
+{% block content %}
+  {% if cyc_list %}
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Название</th>
+          <th scope="col">Начало</th>
+          <th scope="col">Окончание</th>
+          <th scope="col">Часы</th>
+          <th scope="col">Статус</th>
+          <th scope="col">Кафедра</th>
+          <th scope="col">Специальность по циклу</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in cyc_list %}
+          <tr>
+            <td>{{c.cyc_name}}</td>
+            <td>{{c.begin}}</td>
+            <td>{{c.end}}</td>
+            <td>{{c.cyc_hours}}</td>
+            <td>{{c.cyc_status}}</td>
+            <td>{{c.cyc_faculty}}</td>
+            <td>{{c.cyc_specialty}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  {% else %}
+    <h2>Циклов нет</h2>
+  {% endif %}
+{% endblock %}

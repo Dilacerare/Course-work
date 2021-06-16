@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Циклы</title>{% endblock %}
+
+{% block content %}
+  {% if gr_list %}
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Форма обучения</th>
+          <th scope="col">Источник финансирования</th>
+          <th scope="col">Форма получения образования</th>
+          <th scope="col">Форма оплаты</th>
+          <th scope="col">Цикл</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for g in gr_list %}
+          <tr>
+            <td>{{g.group_training}}</td>
+            <td>{{g.group_funding}}</td>
+            <td>{{g.group_education}}</td>
+            <td>{{g.group_payment}}</td>
+            <td>{{g.group_cycles}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  {% else %}
+    <h2>Групп нет</h2>
+  {% endif %}
+{% endblock %}

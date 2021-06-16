@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Пользователи</title>{% endblock %}
+
+{% block content %}
+  {% if ur_list %}
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Фамилия</th>
+          <th scope="col">Имя</th>
+          <th scope="col">Отчество</th>
+          <th scope="col">Логин</th>
+          <th scope="col">Эл. почта</th>
+          <th scope="col">Пароль</th>
+          <th scope="col">День рождения</th>
+          <th scope="col">Роль</th>
+          <th scope="col">Пол</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for u in ur_list %}
+          <tr>
+            <td>{{u.surname}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.patronymic}}</td>
+            <td>{{u.login}}</td>
+            <td>{{u.ur_email}}</td>
+            <td>{{u.password}}</td>
+            <td>{{u.BDay}}</td>
+            <td>{{u.ur_role}}</td>
+            <td>{{u.ur_gender}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  {% else %}
+    <h2>Пользователей нет</h2>
+  {% endif %}
+{% endblock %}

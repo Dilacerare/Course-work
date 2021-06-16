@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>Главная страница</title>{% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{% url 'users_list' %}" class="nav-link active" aria-current="page">Пользователи</a></li>
+        <li class="nav-item"><a href="{% url 'groups_list' %}" class="nav-link">Группы</a></li>
+        <li class="nav-item"><a href="{% url 'cycles_list' %}" class="nav-link">Циклы</a></li>
+      </ul>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
