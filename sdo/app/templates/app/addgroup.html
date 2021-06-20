@@ -1,0 +1,14 @@
+{% extends "addbase.html" %}
+
+{% block title %}<title>Добавление группы</title>{% endblock %}
+
+{% block content %}
+    <form action="{% url 'groups_add' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <p>{{form.errors}}</p>
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Добавить</button>
+        <a class="nav-link active" aria-current="page" href="{% url 'groups_list' %}">Отмена</a>
+    </form>
+{% endblock %}

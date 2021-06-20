@@ -23,10 +23,13 @@
             <td>{{g.group_education}}</td>
             <td>{{g.group_payment}}</td>
             <td>{{g.group_cycles}}</td>
+            <td><a class="nav-link active" aria-current="page" href="delete/{{g.id}}">Удалить</a></td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
+
+    <a class="nav-link active" aria-current="page" href="{% url 'groups_add' %}">Создать группу</a>
 
   {% else %}
     <h2>Групп нет</h2>

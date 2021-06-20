@@ -27,10 +27,13 @@
             <td>{{c.cyc_status}}</td>
             <td>{{c.cyc_faculty}}</td>
             <td>{{c.cyc_specialty}}</td>
+            <td><a class="nav-link active" aria-current="page" href="delete/{{c.id}}">Удалить</a></td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
+
+    <a class="nav-link active" aria-current="page" href="{% url 'cycles_add' %}">Создать цикл</a>
 
   {% else %}
     <h2>Циклов нет</h2>
